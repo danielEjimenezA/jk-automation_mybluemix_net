@@ -1,0 +1,147 @@
+/* style.css
+ * This file provides css styles.
+ */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.loginForm {
+	border: 1px solid;
+	padding: 20px;
+}
+
+.leadForm {
+    border: 1px solid;
+    border-color: #337ab7;
+    padding: 20px;
+}
+
+.downloadDiv {
+	width: 300px;
+	border: 1px solid;
+	padding: 10px;
+}
+
+.download-link {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+    padding: 10px !important;
+}
+.mainPageRow {
+	padding-top: 10px;
+}
+
+.leftNavColumn {
+
+}
+
+.rightColumn {
+	padding-right: 50px;
+}
+
+.leftNavItem {
+	background-color: transparent;
+
+}
+
+.floatingTab {
+	right: 0;
+	top: 40%;
+	position: fixed;
+	z-index: 99999;
+	display: inline-block;
+	padding: 0px;
+	font-size: 0;
+	color: #272727;
+}
+
+.floatingTab-container {
+	transition: .25s;
+	background-color: black;
+}
+
+.floatingTab .ft-list {
+	list-style: none;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+}
+
+.floatingTab * {
+	box-sizing: border-box;
+}
+
+.floatingTab .ft-list li {
+	position: relative;
+	vertical-align: top;
+}
+
+.ftImg {
+	width: 40px;
+}
+
+.xlsGrid {
+	width: 1600px;
+	height: 700px;
+}
+
+.scrollableDiv {
+	height: 200px;
+	overflow:scroll;
+}
+.partialsView {
+	padding-left: 20px;
+	padding-right: 20px;	
+}
+
+.mapPanelBody {
+	height: 625px;
+}
+
+.travelerMap {
+	height: 100%;
+	width: 100%;
+}
+.note {
+	background: #fafafa;
+	border-left: 3px solid #ddd;
+	border-right: 0 solid #ddd;
+	margin-bottom: 20px;
+	padding: 20px;
+	
+	
+}
+
+.note-info {
+	border-color: #5bc0de;
+	background: #f6fbfd;
+	
+}
+
+.partialsView {
+	font-size:large;
+}
+
+.progressLabel {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 20px;
+	font-size: medium;
+	font-weight: bold;
+	font-style:  normal;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 25px;
+  background-color: #f5f5f5;
+}
+

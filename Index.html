@@ -1,0 +1,285 @@
+<html ng-app="bmxCurriculumApp" class="ng-scope">
+	<head>
+	<style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+        <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>JK Automation</title>	
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="stylesheets/ui-grid.min.css">
+        <!-- 	    
+                        <link rel="stylesheet" href="stylesheets/wea-bootstrap-dark.css" type="text/css" />
+        -->
+        <link rel="stylesheet" href="stylesheets/wea-style.css" type="text/css">	   
+        
+		<script src="js/Mejora.js"></script>
+        <script src="js/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+        -->		
+        <script src="js/ui-grid.min.js"></script>
+        <script src="js/ng-file-upload-12.2.13/ng-file-upload-shim.min.js"></script>
+        <script src="js/ng-file-upload-12.2.13/ng-file-upload.min.js"></script>
+        <script src="js/app.js"></script> 
+        <script src="js/controllers/chat.js"></script>
+        <script src="js/controllers.js"></script> 
+
+
+
+    </head>
+
+    <!-- NOTE: The padding-top is set to 50px because that's the height of the navbar at the top of the page -->	
+    <body style="" ng-controller="mainAppCtrl" class="ng-scope">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+					<img src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg.adapt.svg/1493030643828.svg">
+                    <button class="navbar-toggle collapsed" data-target="#bs-top-navbar-collapse-1" data-toggle="collapse" type="button">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <!-- 
+                                                                        <span class="icon-bar"></span>
+                        -->
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/home"><span class="glyphicon glyphicon-home"></span></a>
+
+
+                </div>
+                <div id="#bs-top-navbar-collapse-1" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- 
+                                                                        <li class="active">
+                                                                                <a>
+                                                                                        <span class="glyphicon glyphicon-cog"> BPM</span>
+                                                                                </a>
+                                                                        </li>
+                        -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Demos<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#/downloadFile">Download Leads File</a>
+                                </li>
+                                <li>
+                                    <a href="#/leads">Sales leads</a>
+                                </li>
+                                <li>
+                                    <a href="#/claims">Claims</a>
+                                </li>			                                								
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="">Admin</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <form class="navbar-form navbar-left ng-pristine ng-valid" role="search">
+                            <div class="form-group">
+                                <input class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="query.$" type="text" placeholder="Filter...">
+                            </div>
+                        </form>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--
+                                                                        <li><p class="navbar-text">Hello, <a data-toggle="modal" data-target="#myModal" href="">{{userData.displayName}}</a></p></li>
+                        -->
+                        <li class="dropdown" style="margin-right: 20px;">
+                            <a href="" class="dropdown-toggle ng-binding" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">whatever</a>
+                            <ul class="dropdown-menu">
+                                <li><a data-toggle="modal" data-target="#myModal" href="">User Details</a></li>
+                                <li><a href="./logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>									
+                </div>
+
+            </div>		
+        </nav>
+
+        <div class="row mainPageRow">
+            <div class="col-md-2 leftNavColumn">
+                <div class="list-group">
+
+                    <a class="list-group-item leftNavItem" href="#/downloadFile">Download file</a>
+                    <a class="list-group-item leftNavItem" href="#/leads">Leads</a>
+                    <a class="list-group-item leftNavItem" href="#/claims">Claims</a>
+                    <a class="list-group-item leftNavItem" href="">Orders</a>
+                    <button type="button" class="list-group-item">Parts</button>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <!-- ngView: --><div ng-view="" class="partialsView ng-scope"><div class="page-header ng-scope">
+                        <h2>Item Detail</h2>
+                    </div>
+
+                    <div class="container-fluid ng-scope">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Add New Item</h3>
+                                <form class="form-group leadForm ng-pristine ng-valid" name="leadForm">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Item:</label>
+                                                <input id = "item" class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text" name="firstName" ng-model="firstName">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Material:</label>
+                                                <input id = "material" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" name="lastName" ng-model="lastName">                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Order Quantity:</label>
+                                                <input id = "ordercant" class="form-control ng-pristine ng-valid ng-empty ng-touched" type="text" name="email" ng-model="email">                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Description:</label>
+                                                <input id = "description" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" name="jobTitle" ng-model="jobTitle">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Customer Material Numb:</label>
+                                                <input id = "cmaterial" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" name="company" ng-model="company">     
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>ltCa:</label>
+                                                <input id = "ltCa" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" name="phone" ng-model="phone">                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>DGIP:</label>
+                                                <input id = "dgip" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" name="companyAddress" ng-model="companyAddress">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>HLItm:</label>
+                                                <input id = "hlitm" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" name="companyCity" ng-model="companyCity">  
+                                            </div>
+                                        </div>   
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>First date:</label>
+                                                <input id = "date" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" name="companyState" ng-model="companyState">     
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>Plnt:</label>
+                                                <input id = "plnt" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" name="companyZipcode" ng-model="companyZipcode">     
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Batch</label>
+                                                <input id = "batch" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="text" name="interest" ng-model="interest">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>Follow up</label>
+                                                <input id = "follow" class="form-control ng-pristine ng-untouched ng-valid ng-empty" type="checkbox" name="followup" ng-model="followup">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div style="padding-top: 31px;padding-left:125px;">
+                                                <input class="btn btn-primary" type="button" onClick="registrarItem();" value="Submit">
+												<!--input class="btn btn-primary" type="submit" ng-click="addLead(leadForm)" value="Submit"-->
+                                            </div>
+
+                                        </div>
+                                    </div>                
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <a ng-click="reset()"><span class="glyphicon glyphicon-remove-circle"></span></a>
+                                        <i>All Item</i>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="scrollableDiv">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr><th>Item</th>
+                                                        <th>Material</th>
+                                                        <th>Order Quantity</th>
+                                                        <th>Description</th>
+                                                        <th>Customer Material Numb</th>
+                                                        <th>ltCa</th>
+                                                        <th>DGIP</th>
+                                                        <th>HLItm</th>
+                                                    </tr></thead>
+                                                <tbody id="registros">													
+                                                    <!-- ngRepeat: lead in salesLeads | filter:query -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div></div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <nav style="max-height:25px;min-height:25px" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-bottom-navbar-collapse-1">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a style="padding: 1px 15px;" class="navbar-brand" href="">IBM</a>	
+                </div>
+                <div class="collapse navbar-collapse" id="#bs-bottom-navbar-collapse-1">
+                    <ul class="nav navbar-nav  navbar-right">
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+    </body>
+</html>
